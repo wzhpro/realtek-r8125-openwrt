@@ -1,6 +1,13 @@
 name: Build Realtek r8125 driver for OpenWrt
 
 on:
+  repository_dispatch:
+  workflow_dispatch:
+    inputs:
+      ssh:
+        description: 'SSH connection to Actions'
+        required: false
+        default: 'false'
   push:
     branches:
       - main
